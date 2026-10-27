@@ -11,6 +11,9 @@ name: macOS build
 # only when the built version is the tag's; without one it stays an artifact.
 
 on:
+  # NARAE OFFICE: every push to the fork's working branch builds the installers
+  push:
+    branches: [narae-office]
   workflow_dispatch:
     inputs:
       release_tag:
