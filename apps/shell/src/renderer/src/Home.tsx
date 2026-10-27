@@ -5,6 +5,7 @@ import type {
   ReactElement,
 } from 'react'
 import logoLockup from './assets/genoffice-logo.svg'
+import logoLockupDark from './assets/genoffice-logo-dark.svg'
 import { KbAskPanel } from './KbAskPanel'
 import iconDocx from './assets/file-docx.svg'
 import iconXlsx from './assets/file-xlsx.svg'
@@ -3287,7 +3288,8 @@ export function Home({
         style={sidebarWidth === null ? undefined : { width: sidebarWidth }}
       >
         <div className="sidebar-logo">
-          <img className="logo-lockup" src={logoLockup} alt={productName(lang)} />
+          <img className="logo-lockup logo-lockup-light" src={logoLockup} alt={productName(lang)} />
+          <img className="logo-lockup logo-lockup-dark" src={logoLockupDark} alt={productName(lang)} />
           {RELEASE_IS_BETA && (
             <span className="beta-badge" title={t('betaTooltip')}>
               {t('betaBadge')}

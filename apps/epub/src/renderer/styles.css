@@ -8,9 +8,9 @@
  */
 
 :root {
-  --accent: #1f7a6d;
-  --accent-dark: #17635a;
-  --accent-soft: rgba(31, 122, 109, 0.12);
+  --accent: #b5687a;
+  --accent-dark: #9c5566;
+  --accent-soft: rgba(181, 104, 122, 0.12);
   --epub-on-accent: #ffffff;
   --epub-paper: #ffffff;
   --epub-ink: #1b1b1b;
@@ -20,17 +20,17 @@
 }
 
 [data-theme='dark'] {
-  --accent: #6cc4b5;
-  --accent-dark: #8fd6ca;
-  --accent-soft: rgba(108, 196, 181, 0.18);
+  --accent: #e3a3b0;
+  --accent-dark: #eebbc5;
+  --accent-soft: rgba(227, 163, 176, 0.18);
   --epub-on-accent: #10201d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --accent: #6cc4b5;
-    --accent-dark: #8fd6ca;
-    --accent-soft: rgba(108, 196, 181, 0.18);
+    --accent: #e3a3b0;
+    --accent-dark: #eebbc5;
+    --accent-soft: rgba(227, 163, 176, 0.18);
     --epub-on-accent: #10201d;
   }
 }

@@ -2,9 +2,9 @@
    chrome. These rules only cover the host around it: the layout beside the AI
    panel (ai-panel.css), the loading cover and the save / error notice. */
 :root {
-  --accent: #2b6cb0;
-  --accent-dark: #245a93;
-  --accent-soft: #e6eff8;
+  --accent: #b5687a;
+  --accent-dark: #9c5566;
+  --accent-soft: #fbeef0;
   /* AI panel states the shared tokens have no value for */
   --hwp-focus-ring: rgb(35 36 37 / 20%);
   --hwp-focus-ring-blue: rgb(74 141 246 / 30%);
@@ -18,9 +18,9 @@
 }
 
 [data-theme='dark'] {
-  --accent: #63a4e6;
-  --accent-dark: #4f92d6;
-  --accent-soft: #1e3550;
+  --accent: #e3a3b0;
+  --accent-dark: #eebbc5;
+  --accent-soft: #3d2a2f;
   --hwp-focus-ring: rgb(228 228 228 / 25%);
   --hwp-focus-ring-blue: rgb(74 158 255 / 40%);
   --hwp-error: #f28b82;
@@ -33,9 +33,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --accent: #63a4e6;
-    --accent-dark: #4f92d6;
-    --accent-soft: #1e3550;
+    --accent: #e3a3b0;
+    --accent-dark: #eebbc5;
+    --accent-soft: #3d2a2f;
     --hwp-focus-ring: rgb(228 228 228 / 25%);
     --hwp-focus-ring-blue: rgb(74 158 255 / 40%);
     --hwp-error: #f28b82;

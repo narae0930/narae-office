@@ -13,9 +13,9 @@
 }
 
 .tab-bar {
-  --tabstrip-bg: #ebebeb;
-  --tabstrip-text: #454746;
-  --tabstrip-text-active: #1f1f1f;
+  --tabstrip-bg: #f6eceb;
+  --tabstrip-text: #5a474b;
+  --tabstrip-text-active: #2f2427;
   --tab-separator: rgba(0, 0, 0, 0.22);
   position: fixed;
   top: 0;

@@ -1,9 +1,9 @@
 /* Shared chrome/AI-panel tokens come from @genoffice/ui/tokens.css (imported
  * before this file in main.tsx); only pdf-specific values live here. */
 :root {
-  --accent: #c43e1c;
-  --accent-dark: #a33517;
-  --accent-soft: #fbeae5;
+  --accent: #b5687a;
+  --accent-dark: #9c5566;
+  --accent-soft: #fbeef0;
 
   /* pdf-local chrome shades */
   --pdf-error: #c0392b;
@@ -87,9 +87,9 @@
 }
 
 [data-theme='dark'] {
-  --accent: #e8663f;
-  --accent-dark: #d4552f;
-  --accent-soft: #43261d;
+  --accent: #e3a3b0;
+  --accent-dark: #eebbc5;
+  --accent-soft: #3d2a2f;
   --pdf-error: #e57373;
   --pdf-error-border: rgb(229 115 115 / 50%);
   --pdf-error-bg-hover: rgb(229 115 115 / 12%);
@@ -113,9 +113,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --accent: #e8663f;
-    --accent-dark: #d4552f;
-    --accent-soft: #43261d;
+    --accent: #e3a3b0;
+    --accent-dark: #eebbc5;
+    --accent-soft: #3d2a2f;
     --pdf-error: #e57373;
     --pdf-error-border: rgb(229 115 115 / 50%);
     --pdf-error-bg-hover: rgb(229 115 115 / 12%);

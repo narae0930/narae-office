@@ -841,6 +841,12 @@ const config = {
   nsis: {
     oneClick: false,
     allowToChangeInstallationDirectory: true,
+    // NARAE OFFICE installer screens and the name shown on the Start menu,
+    // the desktop and in "Apps & features" (the exe keeps PRODUCT_NAME)
+    installerSidebar: 'build/installerSidebar.bmp',
+    uninstallerSidebar: 'build/uninstallerSidebar.bmp',
+    shortcutName: 'NARAE OFFICE',
+    uninstallDisplayName: 'NARAE OFFICE ${version}',
     // no spaces: GitHub Releases rewrites them in asset names, and the update
     // feed must name the file exactly as it is downloaded
     artifactName: winArm64
@@ -866,6 +872,8 @@ const config = {
   },
   dmg: {
     sign: true,
+    // 540x380 window; the arrow sits between the default icon slots (130,220) and (410,220)
+    background: 'build/dmg-background.png',
   },
   afterAllArtifactBuild: 'build/notarize-dmg.js',
 }

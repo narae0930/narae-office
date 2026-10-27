@@ -2,22 +2,23 @@
  * before this file in main.tsx); only shell-specific tokens live here. */
 :root {
   /* guide/onboarding accent is the brand blue */
-  --accent: #0f7fff;
-  --accent-hover: #0e72e5;
+  --accent: #b5687a;
+  --accent-hover: #9c5566;
   /* selected-option tint for the shared dropdown (gs-dd) */
-  --accent-soft: #eaf0fd;
+  --accent-soft: #fbeef0;
   --modal-width-sm: 480px;
-  --avatar-bg: #e8ebef;
-  --badge-bg: #eaf0fd;
-  --checkbox-bg: #ececec;
-  --timeline-user-bg: #eef1f5;
-  --timeline-user-text: #5a6170;
+  --avatar-bg: #f6e6e6;
+  --badge-bg: #f9e8ea;
+  --checkbox-bg: #f1e4e4;
+  --timeline-user-bg: #fbeef0;
+  --timeline-user-text: #7a5560;
   /* lift for the active segment in gray-track tab pills */
   --shadow-pill: 0 1px 2px rgb(0 0 0 / 8%);
   --shadow-composer: 0 6px 30px rgb(0 0 0 / 8%);
 
-  /* genoffice-logo.svg is pure black-and-white; dark themes flip it to 1 */
-  --logo-invert: 0;
+  /* the sidebar shows genoffice-logo.svg, dark themes its -dark twin */
+  --logo-light-display: block;
+  --logo-dark-display: none;
   /* lift for the kb-ask composer box */
   --shadow-composer: 0 1px 3px rgb(0 0 0 / 5%);
 }
@@ -26,34 +27,36 @@
 
 /* Explicit dark: [data-theme="dark"] on <html> */
 [data-theme='dark'] {
-  --accent: #3f99ff;
-  --accent-hover: #5ba5ff;
-  --accent-soft: #24354d;
+  --accent: #e3a3b0;
+  --accent-hover: #eebbc5;
+  --accent-soft: #3d2a2f;
   --avatar-bg: #333;
-  --badge-bg: #2a3a4a;
+  --badge-bg: #3d2a2f;
   --checkbox-bg: #333;
   --timeline-user-bg: #2a2a3a;
   --timeline-user-text: #b0b0c0;
   --shadow-pill: 0 1px 2px rgb(0 0 0 / 40%);
   --shadow-composer: 0 6px 30px rgb(0 0 0 / 30%);
-  --logo-invert: 1;
+  --logo-light-display: none;
+  --logo-dark-display: block;
   --shadow-composer: 0 1px 3px rgb(0 0 0 / 25%);
 }
 
 /* System dark: no data-theme or data-theme="system" — follow OS preference */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --accent: #3f99ff;
-    --accent-hover: #5ba5ff;
-    --accent-soft: #24354d;
+    --accent: #e3a3b0;
+    --accent-hover: #eebbc5;
+    --accent-soft: #3d2a2f;
     --avatar-bg: #333;
-    --badge-bg: #2a3a4a;
+    --badge-bg: #3d2a2f;
     --checkbox-bg: #333;
     --timeline-user-bg: #2a2a3a;
     --timeline-user-text: #b0b0c0;
     --shadow-pill: 0 1px 2px rgb(0 0 0 / 40%);
     --shadow-composer: 0 6px 30px rgb(0 0 0 / 30%);
-    --logo-invert: 1;
+    --logo-light-display: none;
+    --logo-dark-display: block;
     --shadow-composer: 0 1px 3px rgb(0 0 0 / 25%);
   }
 }
@@ -136,10 +139,16 @@ body.vib .home {
 }
 
 .logo-lockup {
-  display: block;
   height: 28px;
   width: auto;
-  filter: invert(var(--logo-invert));
+}
+
+.logo-lockup-light {
+  display: var(--logo-light-display);
+}
+
+.logo-lockup-dark {
+  display: var(--logo-dark-display);
 }
 
 /* shown while RELEASE_IS_BETA */

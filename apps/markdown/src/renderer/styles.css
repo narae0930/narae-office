@@ -2,9 +2,9 @@
  * Chrome tokens (surface/text/border/…, AI panel --color-*) come from
  * @genoffice/ui/tokens.css; nothing here may shadow those names. */
 :root {
-  --accent: #185abd;
-  --accent-dark: #124a9e;
-  --accent-soft: #e8f1fb;
+  --accent: #b5687a;
+  --accent-dark: #9c5566;
+  --accent-soft: #fbeef0;
   --word-blue: var(--accent);
 
   --md-link: #0a69da;
@@ -44,9 +44,9 @@
 }
 
 [data-theme='dark'] {
-  --accent: #4a9eff;
-  --accent-dark: #3a8eef;
-  --accent-soft: #1e3a5f;
+  --accent: #e3a3b0;
+  --accent-dark: #eebbc5;
+  --accent-soft: #3d2a2f;
 
   --md-link: #4a9eff;
   --md-code-bg: #23272e;
@@ -81,9 +81,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --accent: #4a9eff;
-    --accent-dark: #3a8eef;
-    --accent-soft: #1e3a5f;
+    --accent: #e3a3b0;
+    --accent-dark: #eebbc5;
+    --accent-soft: #3d2a2f;
 
     --md-link: #4a9eff;
     --md-code-bg: #23272e;

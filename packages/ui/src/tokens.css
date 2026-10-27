@@ -21,28 +21,28 @@
 
   /* chrome */
   --surface: #ffffff;
-  --surface-subtle: #f6f7f9;
-  --chrome-bg: #ffffff;
-  --canvas: #e6e6e6;
-  --border: #e3e6ea;
-  --border-subtle: #efefef;
-  --border-strong: #d9d9d9;
-  --border-hover: #d3d7dd;
-  --text: #242424;
-  --text-primary: #232425;
-  --text-secondary: #606366;
-  --text-tertiary: #909499;
-  --text-muted: #616870;
-  --text-dim: #605e5c;
-  --hover: #f5f5f5;
-  --pressed: #edebe9;
-  --active-bg: #eaeaea;
-  --bg-hover: #f5f5f5;
-  --bg-hover-subtle: #f0f2f5;
-  --bg-hover-strong: #e8eaee;
-  --bg-hover-accent: #e0e4ea;
-  --bg-content: #fafafa;
-  --icon-muted: #b9bfc7;
+  --surface-subtle: #fbf6f5;
+  --chrome-bg: #fffcfa;
+  --canvas: #f3edeb;
+  --border: #efe3e1;
+  --border-subtle: #f4ebe9;
+  --border-strong: #e2d2d0;
+  --border-hover: #dcc8c6;
+  --text: #2f2427;
+  --text-primary: #2f2427;
+  --text-secondary: #6b5a5e;
+  --text-tertiary: #9a888c;
+  --text-muted: #6b5a5e;
+  --text-dim: #6b5a5e;
+  --hover: #fbf1f0;
+  --pressed: #f3e2e1;
+  --active-bg: #f5e4e4;
+  --bg-hover: #fbf1f0;
+  --bg-hover-subtle: #fcf5f4;
+  --bg-hover-strong: #f6e7e6;
+  --bg-hover-accent: #f2dddd;
+  --bg-content: #fdf9f8;
+  --icon-muted: #cdb9bc;
   --danger: #d13438;
   --danger-bg: #fdf3f3;
   /* Word's changed-line bar (Simple Markup): fixed red, tuned per theme */
@@ -63,21 +63,21 @@
   --gs-font-sans:
     'Arial', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     sans-serif;
-  --color-btn-primary: #232425;
-  --color-btn-primary-hover: #393a3b;
+  --color-btn-primary: #b5687a;
+  --color-btn-primary-hover: #9c5566;
   --color-btn-primary-text: #ffffff;
-  --color-ai-action: #e8663f;
-  --color-ai-action-hover: #d4552f;
+  --color-ai-action: #c47989;
+  --color-ai-action-hover: #b0687a;
   --color-ai-action-text: #ffffff;
-  --color-brand-secondary: #0f7fff;
-  --color-text-primary: #232425;
-  --color-text-secondary: #606366;
-  --color-text-tertiary: #909499;
+  --color-brand-secondary: #b5687a;
+  --color-text-primary: #2f2427;
+  --color-text-secondary: #6b5a5e;
+  --color-text-tertiary: #9a888c;
   --color-bg-page: #ffffff;
-  --color-bg-subtle: #f5f5f5;
-  --color-border-default: #eaeaea;
-  --color-border-strong: #d0d3d8;
-  --color-border-brand: #0f7fff;
+  --color-bg-subtle: #fbf3f2;
+  --color-border-default: #f0e4e3;
+  --color-border-strong: #e2d2d0;
+  --color-border-brand: #b5687a;
   --color-error: #ef4444;
   --color-error-hover: #dc2626;
 
@@ -137,10 +137,10 @@
   --color-btn-primary: #e4e4e4;
   --color-btn-primary-hover: #d0d0d0;
   --color-btn-primary-text: #1e1e1e;
-  --color-ai-action: #e8663f;
-  --color-ai-action-hover: #f07a55;
+  --color-ai-action: #d98fa0;
+  --color-ai-action-hover: #e3a3b0;
   --color-ai-action-text: #ffffff;
-  --color-brand-secondary: #4a9eff;
+  --color-brand-secondary: #e3a3b0;
   --color-text-primary: #e4e4e4;
   --color-text-secondary: #a0a0a0;
   --color-text-tertiary: #8a8a8a;
@@ -148,7 +148,7 @@
   --color-bg-subtle: #2a2a2a;
   --color-border-default: #3a3a3a;
   --color-border-strong: #555;
-  --color-border-brand: #4a9eff;
+  --color-border-brand: #e3a3b0;
 
   color-scheme: dark;
 }
@@ -196,10 +196,10 @@
     --color-btn-primary: #e4e4e4;
     --color-btn-primary-hover: #d0d0d0;
     --color-btn-primary-text: #1e1e1e;
-    --color-ai-action: #e8663f;
-    --color-ai-action-hover: #f07a55;
+    --color-ai-action: #d98fa0;
+    --color-ai-action-hover: #e3a3b0;
     --color-ai-action-text: #ffffff;
-    --color-brand-secondary: #4a9eff;
+    --color-brand-secondary: #e3a3b0;
     --color-text-primary: #e4e4e4;
     --color-text-secondary: #a0a0a0;
     --color-text-tertiary: #8a8a8a;
@@ -207,7 +207,7 @@
     --color-bg-subtle: #2a2a2a;
     --color-border-default: #3a3a3a;
     --color-border-strong: #555;
-    --color-border-brand: #4a9eff;
+    --color-border-brand: #e3a3b0;
 
     color-scheme: dark;
   }

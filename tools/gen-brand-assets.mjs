@@ -7,6 +7,7 @@
  *   app-icon-small.svg  -> the same icon redrawn bolder for slots of 32 px and
  *                          below (optional: without it app-icon.svg is used)
  *   logo-lockup.svg     -> the shell sidebar logo (copied verbatim)
+ *   logo-lockup-dark.svg -> its dark-theme twin (copied verbatim)
  *
  * To rebrand, replace those SVGs and run:
  *   node tools/gen-brand-assets.mjs
@@ -38,6 +39,7 @@ const ICON_SMALL_SVG = join(brandDir, 'app-icon-small.svg')
 // Largest canvas (px) that is drawn from the small optical size.
 const SMALL_ICON_MAX_PX = 32
 const LOCKUP_SVG = join(brandDir, 'logo-lockup.svg')
+const LOCKUP_DARK_SVG = join(brandDir, 'logo-lockup-dark.svg')
 const AI_MARK_SVG = join(brandDir, 'ai-mark.svg')
 
 // Full-bleed 1024 px icon: electron-builder's Windows/Linux fallback and the
@@ -57,6 +59,7 @@ const ICNS_TARGETS = ['apps/shell/build/icon.icns', 'apps/docs/build/icon.icns']
 const LINUX_ICON_DIR = 'apps/shell/build/icons'
 const LINUX_SIZES = [16, 32, 48, 64, 128, 256, 512, 1024]
 const LOCKUP_TARGET = 'apps/shell/src/renderer/src/assets/genoffice-logo.svg'
+const LOCKUP_DARK_TARGET = 'apps/shell/src/renderer/src/assets/genoffice-logo-dark.svg'
 
 const WIN_SIZES = [16, 24, 32, 48, 64, 128, 256]
 
@@ -211,13 +214,14 @@ async function writePreview(page, outFile) {
   const icon = (size) =>
     `data:image/png;base64,${readFileSync(join(root, LINUX_ICON_DIR, `${size}x${size}.png`)).toString('base64')}`
   const lockup = svgDataUrl(LOCKUP_SVG)
+  const lockupDark = svgDataUrl(LOCKUP_DARK_SVG)
   const aiMark = readFileSync(AI_MARK_SVG, 'utf8').replace(/^[\s\S]*?(?=<svg)/, '')
   const row = (background, color, invert) =>
     `<div style="background:${background};color:${color};padding:28px;display:flex;align-items:flex-end;gap:28px">` +
     [256, 48, 32, 16]
       .map((size) => `<img src="${icon(size)}" width="${size}" height="${size}">`)
       .join('') +
-    `<img src="${lockup}" height="56" style="margin-left:24px;filter:invert(${invert})">` +
+    `<img src="${invert ? lockupDark : lockup}" height="56" style="margin-left:24px">` +
     [30, 26, 22, 18, 14]
       .map((size) => aiMark.replace('width="24" height="24"', `width="${size}" height="${size}"`))
       .join('') +
@@ -269,6 +273,8 @@ try {
 
   copyFileSync(LOCKUP_SVG, join(root, LOCKUP_TARGET))
   console.log(`wrote ${LOCKUP_TARGET}`)
+  copyFileSync(LOCKUP_DARK_SVG, join(root, LOCKUP_DARK_TARGET))
+  console.log(`wrote ${LOCKUP_DARK_TARGET}`)
 
   if (previewFile) await writePreview(page, resolve(previewFile))
 } finally {
