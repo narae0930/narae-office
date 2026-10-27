@@ -148,7 +148,7 @@ jobs:
       - name: Upload the release files
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ieumoffice-linux-x64
+          name: naraeoffice-linux-x64
           path: |
             apps/shell/release/*.AppImage
             apps/shell/release/*.deb
@@ -175,7 +175,7 @@ jobs:
       - name: Attach to the release
         run: |
           set -euo pipefail
-          gh run download "$GITHUB_RUN_ID" --name ieumoffice-linux-x64 --dir linux
+          gh run download "$GITHUB_RUN_ID" --name naraeoffice-linux-x64 --dir linux
           [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?$ ]] || { echo "not a version tag: $TAG"; exit 1; }
           gh release view "$TAG" >/dev/null || { echo "no release $TAG: publish it first"; exit 1; }
           feed=$(ls linux/*-linux.yml)

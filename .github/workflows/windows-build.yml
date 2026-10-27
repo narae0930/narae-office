@@ -153,7 +153,7 @@ jobs:
       - name: Upload the release files
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ieumoffice-windows-x64
+          name: naraeoffice-windows-x64
           path: |
             apps/shell/release/NaraeOffice-Setup-*.exe
             apps/shell/release/NaraeOffice-Setup-*.exe.blockmap
@@ -179,7 +179,7 @@ jobs:
       - name: Attach to the release
         run: |
           set -euo pipefail
-          gh run download "$GITHUB_RUN_ID" --name ieumoffice-windows-x64 --dir windows
+          gh run download "$GITHUB_RUN_ID" --name naraeoffice-windows-x64 --dir windows
           [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?$ ]] || { echo "not a version tag: $TAG"; exit 1; }
           gh release view "$TAG" >/dev/null || { echo "no release $TAG: publish it first"; exit 1; }
           built=$(sed -n 's/^version: *//p' windows/latest.yml | tr -d "'\"")
