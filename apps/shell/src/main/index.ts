@@ -6904,6 +6904,23 @@ function registerTabsIpc(): void {
         : {}),
     })
   })
+  // the "File" button beside ☰: the window's File menu alone, so every editor
+  // offers open / save / save as / export / print in the same place
+  ipcMain.handle(TABS_CHANNELS.showFileMenu, (_event, x: unknown, y: unknown) => {
+    if (!shellWindow) return
+    // the shell's menus name it tm('menuFile'); the Word / Excel / PowerPoint
+    // modules build their own, whose File menu is the first one on Windows/Linux
+    const items = Menu.getApplicationMenu()?.items ?? []
+    const fileMenu =
+      items.find((item) => item.label === tm('menuFile')) ?? items.find((item) => item.submenu)
+    if (!fileMenu?.submenu) return
+    fileMenu.submenu.popup({
+      window: shellWindow,
+      ...(typeof x === 'number' && typeof y === 'number'
+        ? { x: Math.round(x), y: Math.round(y) }
+        : {}),
+    })
+  })
   ipcMain.handle(TABS_CHANNELS.showMenu, (_event, x: unknown, y: unknown) => {
     if (!tabManager || !shellWindow) return
     const menu = Menu.buildFromTemplate(

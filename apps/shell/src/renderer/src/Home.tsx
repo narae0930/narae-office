@@ -3289,7 +3289,11 @@ export function Home({
       >
         <div className="sidebar-logo">
           <img className="logo-lockup logo-lockup-light" src={logoLockup} alt={productName(lang)} />
-          <img className="logo-lockup logo-lockup-dark" src={logoLockupDark} alt={productName(lang)} />
+          <img
+            className="logo-lockup logo-lockup-dark"
+            src={logoLockupDark}
+            alt={productName(lang)}
+          />
           {RELEASE_IS_BETA && (
             <span className="beta-badge" title={t('betaTooltip')}>
               {t('betaBadge')}

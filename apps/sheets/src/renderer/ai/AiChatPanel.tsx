@@ -12,6 +12,7 @@ import {
   type OnTemplateSkill,
   type SkillChipRef,
   type SkillUse,
+  AiMascot,
 } from '@genoffice/ui'
 import React, { useEffect, useRef, useState } from 'react'
 import {
@@ -769,6 +770,7 @@ export function AiChatPanel({
         )}
         {chat.length === 0 && historicChat.length === 0 && !subscription.connectChoice && (
           <div className="ai-chat-empty">
+            <AiMascot lang={lang} />
             <div className="ai-chat-empty-title">
               {t(hasContent ? 'aiEmptyTitle' : 'aiEmptyBuildTitle')}
             </div>

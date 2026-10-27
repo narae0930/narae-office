@@ -17,6 +17,9 @@
   --tabstrip-text: #5a474b;
   --tabstrip-text-active: #2f2427;
   --tab-separator: rgba(0, 0, 0, 0.22);
+  --tab-file-bg: #b5687a;
+  --tab-file-bg-hover: #9c5566;
+  --tab-file-text: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
@@ -57,6 +60,33 @@ body.overlay-title-bar .tab-bar-drag-spacer {
 
 .tab-app-menu-btn {
   margin-right: 2px;
+}
+
+/* the "File" button: the active editor's File menu, as a labelled pill */
+.tab-file-menu-btn {
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+  align-self: center;
+  height: 26px;
+  margin-right: 4px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 7px;
+  background: var(--tab-file-bg);
+  color: var(--tab-file-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-file-menu-btn:hover {
+  background: var(--tab-file-bg-hover);
+}
+
+.tab-file-menu-btn:focus-visible {
+  outline: 2px solid var(--tab-file-bg);
+  outline-offset: 2px;
 }
 
 /* scrollable middle section; empty space stays part of the window drag region.
@@ -341,6 +371,8 @@ body.overlay-title-bar .tab-bar-drag-spacer {
   --tabstrip-text: #b0b0b0;
   --tabstrip-text-active: #e4e4e4;
   --tab-separator: rgba(255, 255, 255, 0.15);
+  --tab-file-bg: #c47989;
+  --tab-file-bg-hover: #d58e9e;
 }
 
 [data-theme='dark'] .tab-item.active .tab-plate {
@@ -368,6 +400,8 @@ body.overlay-title-bar .tab-bar-drag-spacer {
     --tabstrip-text: #b0b0b0;
     --tabstrip-text-active: #e4e4e4;
     --tab-separator: rgba(255, 255, 255, 0.15);
+    --tab-file-bg: #c47989;
+    --tab-file-bg-hover: #d58e9e;
   }
   :root:not([data-theme='light']):not([data-theme='dark']) .tab-item.active .tab-plate {
     background: var(--surface);

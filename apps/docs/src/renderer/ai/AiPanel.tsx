@@ -31,6 +31,7 @@ import {
   type TemplateDocument,
   type SkillChipRef,
   type SkillUse,
+  AiMascot,
 } from '@genoffice/ui'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Editor } from '@tiptap/core'
@@ -1714,6 +1715,7 @@ export function AiPanel({
         )}
         {chat.length === 0 && historicChat.length === 0 && (
           <div className="ai-chat-empty">
+            <AiMascot lang={lang} />
             <div className="ai-chat-empty-title">
               {t(docEmpty ? 'aiEmptyDraftTitle' : 'aiEmptyTitle')}
             </div>

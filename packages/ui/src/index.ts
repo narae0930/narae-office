@@ -1,6 +1,7 @@
 export { AiPanelSideButton } from './AiPanelSideButton'
 export { DriveAttachButton, drivePickedOf } from './DriveAttachButton'
 export type { DriveAttachPicked } from './DriveAttachButton'
+export { AiMascot } from './AiMascot'
 export { DocAttachButton, docPickedOf } from './DocAttachButton'
 export type { DocAttachPicked } from './DocAttachButton'
 export type {

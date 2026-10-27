@@ -11,6 +11,7 @@ import {
   AiSubscriptionUsageLine,
   aiSubscriptionText,
   useAiSendGate,
+  AiMascot,
 } from '@genoffice/ui'
 import { useEffect, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactElement, ReactNode } from 'react'
@@ -1130,6 +1131,7 @@ export function AiPanel({
       <div className="ai-chat" ref={chatRef} onScroll={onChatScroll}>
         {chat.length === 0 && (
           <div className="ai-chat-empty">
+            <AiMascot lang={lang} />
             <div className="ai-chat-empty-title">{t('aiEmptyTitle')}</div>
             <div className="ai-chat-empty-body">{t('aiEmptyBody')}</div>
             <div className="ai-starter-list">

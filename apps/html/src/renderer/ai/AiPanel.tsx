@@ -27,6 +27,7 @@ import {
   type SkillUse,
   docMentionActions,
   type AiComposerDocs,
+  AiMascot,
 } from '@genoffice/ui'
 import { useEffect, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactElement, ReactNode } from 'react'
@@ -1591,6 +1592,7 @@ export function AiPanel({
       <div className="ai-chat" ref={chatRef} onScroll={onChatScroll}>
         {chat.length === 0 && (
           <div className="ai-chat-empty">
+            <AiMascot lang={lang} />
             <div className="ai-chat-empty-title">
               {t(
                 docEmpty

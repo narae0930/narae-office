@@ -424,6 +424,17 @@ export function TabBar({ split }: TabBarProps) {
           </svg>
         </button>
       )}
+      {!IS_MAC && (
+        <button
+          className="tab-file-menu-btn"
+          onClick={(event) => {
+            const rect = event.currentTarget.getBoundingClientRect()
+            void window.aiOfficeTabs.showFileMenu(Math.round(rect.left), Math.round(rect.bottom))
+          }}
+        >
+          {t('appFileMenu')}
+        </button>
+      )}
       <div
         className={`tab-strip ${dragVisual ? 'dragging' : ''} ${dockX !== null ? 'dock-target' : ''}`}
         ref={stripRef}

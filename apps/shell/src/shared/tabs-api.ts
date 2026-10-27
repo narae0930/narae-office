@@ -96,6 +96,8 @@ export interface TabsApi {
    * system menu bar and never shows the button.
    */
   showAppMenu(x: number, y: number): Promise<void>
+  /** pop up just the active tab's File menu (open, save, export, print) under the "File" button */
+  showFileMenu(x: number, y: number): Promise<void>
   /** move a tab to a new index in the strip; Home stays pinned at index 0 */
   reorder(id: string, toIndex: number): Promise<void>
   /** subscribe to tab list changes (open/close/activate/title updates); returns unsubscribe */
@@ -137,6 +139,7 @@ export const TABS_CHANNELS = {
   dockPreview: 'tabs:dock-preview',
   dockIndex: 'tabs:dock-index',
   showAppMenu: 'tabs:show-app-menu',
+  showFileMenu: 'tabs:show-file-menu',
   reorder: 'tabs:reorder',
   changed: 'tabs:changed',
   chromePressed: 'tabs:chrome-pressed',
