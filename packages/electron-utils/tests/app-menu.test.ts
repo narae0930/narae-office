@@ -214,17 +214,18 @@ describe('checkUpdatesMenuItem / manual update check wiring', () => {
     expect(helpCheckUpdatesItems(en, 'darwin').map((i) => i.label)).toEqual([en.checkUpdates])
   })
 
-  it('ends the ☰ popup with the check on its own, after the window menus', () => {
+  it('ends the ☰ popup with the manual and the check, after the window menus', () => {
     const menus = [{ label: 'File', submenu: [] }, helpMenuTemplate(en, [], 'win32')]
     const popup = appMenuPopupTemplate(menus, en)
     expect(popup.slice(0, 2)).toEqual(menus)
     expect(popup[2]).toEqual({ type: 'separator' })
-    expect(popup[3]!.label).toBe(en.checkUpdates)
-    expect(popup).toHaveLength(4)
+    expect(popup[3]!.label).toContain('User Manual')
+    expect(popup[4]!.label).toBe(en.checkUpdates)
+    expect(popup).toHaveLength(5)
 
     const invoke = vi.fn()
     setUpdateCheckInvoker(invoke)
-    ;(popup[3] as { click: () => void }).click()
+    ;(popup[4] as { click: () => void }).click()
     expect(invoke).toHaveBeenCalledOnce()
   })
 

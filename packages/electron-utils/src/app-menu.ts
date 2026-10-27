@@ -24,6 +24,7 @@ export interface AppMenuLabels extends ContextMenuLabels {
   help: string
   about: string
   checkUpdates: string
+  manual: string
   version: string
 }
 
@@ -48,6 +49,7 @@ const EN: Labels = {
   help: 'Help',
   about: 'About GenOffice',
   checkUpdates: 'Check for Updates…',
+  manual: 'GenOffice User Manual (Korean)',
   version: 'Version',
 }
 
@@ -73,6 +75,7 @@ const LABELS: Record<string, Labels> = {
     help: '帮助',
     about: '关于 GenOffice',
     checkUpdates: '检查更新…',
+    manual: 'GenOffice 使用说明书（韩语）',
     version: '版本',
   },
   en: EN,
@@ -95,6 +98,7 @@ const LABELS: Record<string, Labels> = {
     help: 'ヘルプ',
     about: 'GenOffice について',
     checkUpdates: '更新を確認…',
+    manual: 'GenOffice 取扱説明書（韓国語）',
     version: 'バージョン',
   },
   ko: {
@@ -116,6 +120,7 @@ const LABELS: Record<string, Labels> = {
     help: '도움말',
     about: 'GenOffice 정보',
     checkUpdates: '업데이트 확인…',
+    manual: 'GenOffice 사용설명서',
     version: '버전',
   },
   fr: {
@@ -137,6 +142,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Aide',
     about: 'À propos de GenOffice',
     checkUpdates: 'Rechercher les mises à jour…',
+    manual: 'Manuel de GenOffice (coréen)',
     version: 'Version',
   },
   de: {
@@ -158,6 +164,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Hilfe',
     about: 'Über GenOffice',
     checkUpdates: 'Nach Updates suchen…',
+    manual: 'GenOffice-Handbuch (Koreanisch)',
     version: 'Version',
   },
   es: {
@@ -179,6 +186,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Ayuda',
     about: 'Acerca de GenOffice',
     checkUpdates: 'Buscar actualizaciones…',
+    manual: 'Manual de GenOffice (coreano)',
     version: 'Versión',
   },
   th: {
@@ -200,6 +208,7 @@ const LABELS: Record<string, Labels> = {
     help: 'วิธีใช้',
     about: 'เกี่ยวกับ GenOffice',
     checkUpdates: 'ตรวจหาการอัปเดต…',
+    manual: 'คู่มือ GenOffice (ภาษาเกาหลี)',
     version: 'เวอร์ชัน',
   },
   id: {
@@ -221,6 +230,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Bantuan',
     about: 'Tentang GenOffice',
     checkUpdates: 'Periksa Pembaruan…',
+    manual: 'Panduan GenOffice (bahasa Korea)',
     version: 'Versi',
   },
   ru: {
@@ -242,6 +252,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Справка',
     about: 'О GenOffice',
     checkUpdates: 'Проверить обновления…',
+    manual: 'Руководство GenOffice (на корейском)',
     version: 'Версия',
   },
   ar: {
@@ -263,6 +274,7 @@ const LABELS: Record<string, Labels> = {
     help: 'تعليمات',
     about: 'حول GenOffice',
     checkUpdates: 'التحقق من التحديثات…',
+    manual: 'دليل GenOffice (بالكورية)',
     version: 'الإصدار',
   },
   pt: {
@@ -284,6 +296,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Ajuda',
     about: 'Sobre o GenOffice',
     checkUpdates: 'Procurar atualizações…',
+    manual: 'Manual do GenOffice (coreano)',
     version: 'Versão',
   },
   it: {
@@ -305,6 +318,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Aiuto',
     about: 'Informazioni su GenOffice',
     checkUpdates: 'Controlla aggiornamenti…',
+    manual: 'Manuale di GenOffice (coreano)',
     version: 'Versione',
   },
   pl: {
@@ -326,6 +340,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Pomoc',
     about: 'O programie GenOffice',
     checkUpdates: 'Sprawdź aktualizacje…',
+    manual: 'Podręcznik GenOffice (po koreańsku)',
     version: 'Wersja',
   },
   cs: {
@@ -347,6 +362,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Nápověda',
     about: 'O aplikaci GenOffice',
     checkUpdates: 'Zkontrolovat aktualizace…',
+    manual: 'Příručka GenOffice (korejsky)',
     version: 'Verze',
   },
   nl: {
@@ -368,6 +384,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Help',
     about: 'Over GenOffice',
     checkUpdates: 'Controleren op updates…',
+    manual: 'Handleiding GenOffice (Koreaans)',
     version: 'Versie',
   },
   ms: {
@@ -389,6 +406,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Bantuan',
     about: 'Perihal GenOffice',
     checkUpdates: 'Semak Kemas Kini…',
+    manual: 'Manual GenOffice (bahasa Korea)',
     version: 'Versi',
   },
   he: {
@@ -410,6 +428,7 @@ const LABELS: Record<string, Labels> = {
     help: 'עזרה',
     about: 'אודות GenOffice',
     checkUpdates: 'בדוק עדכונים…',
+    manual: 'מדריך GenOffice (בקוריאנית)',
     version: 'גרסה',
   },
   hi: {
@@ -431,6 +450,7 @@ const LABELS: Record<string, Labels> = {
     help: 'सहायता',
     about: 'GenOffice के बारे में',
     checkUpdates: 'अपडेट जांचें…',
+    manual: 'GenOffice उपयोग पुस्तिका (कोरियाई)',
     version: 'संस्करण',
   },
   vi: {
@@ -452,6 +472,7 @@ const LABELS: Record<string, Labels> = {
     help: 'Trợ giúp',
     about: 'Giới thiệu GenOffice',
     checkUpdates: 'Kiểm tra bản cập nhật…',
+    manual: 'Hướng dẫn GenOffice (tiếng Hàn)',
     version: 'Phiên bản',
   },
   'zh-TW': {
@@ -473,6 +494,7 @@ const LABELS: Record<string, Labels> = {
     help: '說明',
     about: '關於 GenOffice',
     checkUpdates: '檢查更新…',
+    manual: 'GenOffice 使用說明書（韓語）',
     version: '版本',
   },
 }
@@ -649,12 +671,28 @@ export function helpCheckUpdatesItems(
   return platform === 'darwin' ? [checkUpdatesMenuItem(labels)] : []
 }
 
-/** The tab bar's ☰ popup: the window's menus, then Check for Updates… on its own. */
+/** The NARAE OFFICE manual shipped in the install folder (resources/manual),
+ * opened in the default browser. */
+export function manualMenuItem(labels: AppMenuLabels): MenuItemConstructorOptions {
+  return {
+    label: brandText(labels.manual, getUiLang()),
+    click: async () => {
+      const { app, shell } = await import('electron')
+      const { join } = await import('node:path')
+      const dir = app.isPackaged
+        ? join(process.resourcesPath, 'manual')
+        : join(app.getAppPath(), 'resources', 'manual')
+      void shell.openPath(join(dir, 'narae-office-manual.html'))
+    },
+  }
+}
+
+/** The tab bar's ☰ popup: the window's menus, then the manual and Check for Updates… on their own. */
 export function appMenuPopupTemplate(
   menus: MenuItemConstructorOptions[],
   labels: AppMenuLabels,
 ): MenuItemConstructorOptions[] {
-  return [...menus, { type: 'separator' }, checkUpdatesMenuItem(labels)]
+  return [...menus, { type: 'separator' }, manualMenuItem(labels), checkUpdatesMenuItem(labels)]
 }
 
 /** Help menu with Check for Updates… (macOS) + About; extra app-specific items
@@ -668,8 +706,9 @@ export function helpMenuTemplate(
     role: 'help',
     label: labels.help,
     submenu: [
+      manualMenuItem(labels),
       ...extraItems,
-      ...(extraItems.length > 0 ? [{ type: 'separator' } as const] : []),
+      { type: 'separator' },
       ...helpCheckUpdatesItems(labels, platform),
       aboutMenuItem(labels),
     ],

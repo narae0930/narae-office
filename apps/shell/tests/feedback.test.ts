@@ -80,11 +80,12 @@ describe('the survey address', () => {
 })
 
 describe('the shell wiring', () => {
-  it('offers the feedback entry from whatever Help menu is installed', () => {
+  // NARAE OFFICE: the upstream survey belongs to IeumOffice, so the Help slot opens the manual
+  it('offers the manual in the feedback slot of whatever Help menu is installed', () => {
     expect(index).toMatch(/withHelpItems\(\)/)
     expect(index).toContain('FEEDBACK_MENU_ID')
     expect(index).toMatch(/id: FEEDBACK_MENU_ID/)
-    expect(index).toMatch(/click: \(\) => void openFeedbackSurvey\(\)/)
+    expect(index).toMatch(/\.\.\.manualMenuItem\(appMenuLabels\(currentLang\(\)\)\)/)
   })
 
   it('copies the details and opens only the survey', () => {
@@ -93,10 +94,11 @@ describe('the shell wiring', () => {
     expect(index).toMatch(/HOME_CHANNELS\.openFeedbackSurvey/)
   })
 
-  it('exposes the entry through preload for Settings → About', () => {
+  it('keeps the preload entry but not the Settings → About row', () => {
     expect(src('../src/preload/index.ts')).toMatch(/openFeedbackSurvey\(\)/)
     expect(src('../src/shared/home-api.ts')).toMatch(/openFeedbackSurvey/)
-    expect(src('../src/renderer/src/SettingsModal.tsx')).toMatch(
+    // NARAE OFFICE: Settings → About no longer shows the upstream survey
+    expect(src('../src/renderer/src/SettingsModal.tsx')).not.toMatch(
       /window\.aiOffice\.openFeedbackSurvey/,
     )
   })

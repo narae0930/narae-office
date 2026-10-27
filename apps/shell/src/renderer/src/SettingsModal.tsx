@@ -2027,18 +2027,7 @@ export function SettingsModal({
                     </button>
                   }
                 />
-                <div className="set-field">
-                  <div className="set-field-text">
-                    <label className="set-field-label">{t('setFeedback')}</label>
-                    <div className="set-field-desc">{t('setFeedbackDesc')}</div>
-                  </div>
-                  <button
-                    className="set-btn"
-                    onClick={() => void window.aiOffice.openFeedbackSurvey?.()}
-                  >
-                    {t('feedbackOpen')}
-                  </button>
-                </div>
+                {/* NARAE OFFICE: the upstream feedback survey belongs to IeumOffice, so no feedback row here */}
                 <div className="set-field">
                   <div className="set-field-text">
                     <label className="set-field-label">{t('setLicenses')}</label>

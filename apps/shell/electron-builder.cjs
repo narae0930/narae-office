@@ -66,6 +66,7 @@ function assertExtraResourceSources() {
     '../../packages/ui/template-fonts/README.md',
     '../../node_modules/@rhwp/core/rhwp_bg.wasm',
     'resources/builtin-skills/builtin-skills.json',
+    'resources/manual/narae-office-manual.html',
   ]) {
     if (!existsSync(join(__dirname, rel))) {
       throw new Error(
@@ -644,6 +645,10 @@ const config = {
     {
       from: 'resources/builtin-skills',
       to: 'builtin-skills',
+    }, // the NARAE OFFICE manual, opened from ☰ and Help (manualMenuItem in @genoffice/electron-utils)
+    {
+      from: 'resources/manual',
+      to: 'manual',
     },
   ],
   // `mimeType` is read only by the Linux target, where it becomes the

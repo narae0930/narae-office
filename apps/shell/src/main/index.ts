@@ -83,6 +83,7 @@ import {
   windowMenuTemplate,
   aboutMenuItem,
   appMenuPopupTemplate,
+  manualMenuItem,
   helpCheckUpdatesItems,
   setUpdateCheckInvoker,
   installRendererProtocol,
@@ -4412,10 +4413,11 @@ function withHelpItems(): void {
     accelerator: 'F1',
     click: () => tabManager?.openHelpTab(),
   }
+  // NARAE OFFICE: the upstream feedback survey belongs to IeumOffice, so this
+  // slot opens the NARAE OFFICE manual instead (the id still marks a done menu)
   const feedback: MenuItemConstructorOptions = {
+    ...manualMenuItem(appMenuLabels(currentLang())),
     id: FEEDBACK_MENU_ID,
-    label: feedbackText(currentLang(), 'menuLabel'),
-    click: () => void openFeedbackSurvey(),
   }
   const help = menu.items.find((item) => item.role === 'help')
   // Slides and Sheets build a File/Edit/View template with no Help menu at

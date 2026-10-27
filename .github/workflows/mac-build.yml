@@ -14,6 +14,9 @@ on:
   # NARAE OFFICE: every push to the fork's working branch builds the installers
   push:
     branches: [narae-office]
+  # NARAE OFFICE: publishing a release on GitHub builds and attaches the installers to it
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       release_tag:
@@ -172,14 +175,16 @@ jobs:
     # the one job that writes: it adds the build to a release the maintainer
     # already published, and only for a run started by hand on main
     needs: build
-    if: github.event_name == 'workflow_dispatch' && inputs.release_tag != '' && github.ref == 'refs/heads/main'
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.release_tag != '' && github.ref == 'refs/heads/main')
+      || github.event_name == 'release'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
       actions: read
       contents: write
     env:
-      TAG: ${{ inputs.release_tag }}
+      TAG: ${{ inputs.release_tag || github.event.release.tag_name }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:

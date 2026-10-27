@@ -16,6 +16,9 @@ on:
   # NARAE OFFICE: every push to the fork's working branch builds the installers
   push:
     branches: [narae-office]
+  # NARAE OFFICE: publishing a release on GitHub builds and attaches the installers to it
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       release_tag:
@@ -168,17 +171,23 @@ jobs:
     # the one job that writes: it adds the build to a release the maintainer
     # already published, and only for a run started by hand on main
     needs: build
-    if: github.event_name == 'workflow_dispatch' && inputs.release_tag != '' && github.ref == 'refs/heads/main'
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.release_tag != '' && github.ref == 'refs/heads/main')
+      || github.event_name == 'release'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
       actions: read
       contents: write
     env:
-      TAG: ${{ inputs.release_tag }}
+      TAG: ${{ inputs.release_tag || github.event.release.tag_name }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:
+      - name: Checkout the manual
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          sparse-checkout: apps/shell/resources/manual
       - name: Attach to the release
         run: |
           set -euo pipefail
@@ -188,4 +197,5 @@ jobs:
           built=$(sed -n 's/^version: *//p' windows/latest.yml | tr -d "'\"")
           [ "v$built" = "$TAG" ] || { echo "built $built, but the release is $TAG"; exit 1; }
           gh release upload "$TAG" windows/NaraeOffice-Setup-*.exe windows/NaraeOffice-Setup-*.exe.blockmap windows/latest.yml --clobber
+          gh release upload "$TAG" apps/shell/resources/manual/narae-office-manual.html --clobber
           gh release view "$TAG" --json assets --jq '.assets[].name'
