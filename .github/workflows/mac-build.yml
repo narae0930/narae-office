@@ -103,14 +103,14 @@ jobs:
           for pair in mac-arm64:arm64 mac:x86_64; do
             dir="${pair%%:*}"
             cpu="${pair##*:}"
-            app="apps/shell/release/$dir/IeumOffice.app"
+            app="apps/shell/release/$dir/NaraeOffice.app"
             codesign --verify --deep --strict --verbose=2 "$app"
             # read the whole report first: grep -q quitting early would break the pipe
             signature="$(codesign -dv "$app" 2>&1)"
             echo "$signature"
             grep -q 'Signature=adhoc' <<<"$signature"
             for bin in \
-              "$app/Contents/MacOS/IeumOffice" \
+              "$app/Contents/MacOS/NaraeOffice" \
               "$app/Contents/Resources/native/xlsx-sidecar" \
               "$app/Contents/Resources/ocr/vision-ocr"; do
               test -f "$bin" || { echo "missing: $bin"; exit 1; }
@@ -118,7 +118,7 @@ jobs:
             done
           done
           # each dmg names its CPU (config.dmg.artifactName)
-          ls apps/shell/release/IeumOffice-*-arm64.dmg apps/shell/release/IeumOffice-*-x64.dmg
+          ls apps/shell/release/NaraeOffice-*-arm64.dmg apps/shell/release/NaraeOffice-*-x64.dmg
 
       # the Intel app runs on this runner only through Rosetta, which an image
       # may not carry yet
@@ -137,7 +137,7 @@ jobs:
           for pair in mac-arm64:arm64 mac:x86_64; do
             dir="${pair%%:*}"
             cpu="${pair##*:}"
-            exe="apps/shell/release/$dir/IeumOffice.app/Contents/MacOS/IeumOffice"
+            exe="apps/shell/release/$dir/NaraeOffice.app/Contents/MacOS/NaraeOffice"
             work="$RUNNER_TEMP/smoke-$cpu"
             mkdir -p "$work"
             printf '# Smoke test\n\nHello from the macOS build.\n' > "$work/note.md"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  IeumOffice app icon, small optical size (16-32 px slots).
+  NaraeOffice app icon, small optical size (16-32 px slots).
 
   Same mark as app-icon.svg, redrawn bolder on a 64-unit grid (one pixel at
   16 px, two at 32 px) so every stroke edge lands on a pixel boundary and the

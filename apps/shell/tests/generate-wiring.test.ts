@@ -102,7 +102,7 @@ describe('generate strings', () => {
 
   it('never types the product name', () => {
     const all = JSON.stringify([generateStrings, DEFAULT_GENERATE_PROMPTS])
-    expect(all).not.toMatch(/IeumOffice|이음오피스|GenOffice/)
+    expect(all).not.toMatch(/NaraeOffice|NARAE OFFICE|GenOffice/)
   })
 
   it('has a default request per kind in every language', () => {

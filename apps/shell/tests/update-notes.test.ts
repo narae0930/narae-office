@@ -16,7 +16,7 @@ const RELEASE_0_12_1 = `<p>이음오피스 0.12.1입니다. 아직 <strong>베�
 <h2>설치</h2>
 <p><strong>Windows</strong></p>
 <ol>
-<li>아래 <strong>Assets</strong>에서 <code>IeumOffice-Setup-0.12.1.exe</code>를 내려받아 실행합니다.</li>
+<li>아래 <strong>Assets</strong>에서 <code>NaraeOffice-Setup-0.12.1.exe</code>를 내려받아 실행합니다.</li>
 <li>설치 파일에 서명이 없어 Windows가 "Windows의 PC 보호" 창을 띄웁니다. <strong>추가 정보 → 실행</strong>을 누르면 설치가 시작됩니다.</li>
 </ol>
 <h2>새로 들어간 것</h2>
@@ -70,7 +70,7 @@ describe('normalizeReleaseNotes — real feed body', () => {
     expect(install).toMatchObject({ kind: 'list', ordered: true })
     expect(added).toMatchObject({ kind: 'list', ordered: false })
     const installText = JSON.stringify(install)
-    expect(installText).toContain('"text":"IeumOffice-Setup-0.12.1.exe","code":true')
+    expect(installText).toContain('"text":"NaraeOffice-Setup-0.12.1.exe","code":true')
     expect(installText).toContain('Windows의 PC 보호')
     expect(textOf(blocks)).toContain('워드 탭을 닫으면 쓰던 메모리를 돌려줍니다.')
   })

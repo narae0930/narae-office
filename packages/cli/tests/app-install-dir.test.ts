@@ -4,23 +4,23 @@ import { appBinaryForResources } from '../src/resources'
 
 describe('appBinaryForResources', () => {
   it('finds the app in a custom Windows install directory', () => {
-    expect(appBinaryForResources(join('D:\\Apps\\IeumOffice', 'resources'), 'win32')).toBe(
-      join('D:\\Apps\\IeumOffice', 'IeumOffice.exe'),
+    expect(appBinaryForResources(join('D:\\Apps\\NaraeOffice', 'resources'), 'win32')).toBe(
+      join('D:\\Apps\\NaraeOffice', 'NaraeOffice.exe'),
     )
   })
 
   it('resolves the same binary for the default Windows install directory', () => {
     const localAppData = 'C:\\Users\\test\\AppData\\Local'
-    const resources = join(localAppData, 'Programs', 'IeumOffice', 'resources')
+    const resources = join(localAppData, 'Programs', 'NaraeOffice', 'resources')
     expect(appBinaryForResources(resources, 'win32')).toBe(
-      join(localAppData, 'Programs', 'IeumOffice', 'IeumOffice.exe'),
+      join(localAppData, 'Programs', 'NaraeOffice', 'NaraeOffice.exe'),
     )
   })
 
   it('finds the app in a custom macOS bundle location', () => {
     expect(
-      appBinaryForResources(join('/Volumes/Work/IeumOffice.app/Contents/Resources'), 'darwin'),
-    ).toBe(join('/Volumes/Work/IeumOffice.app/Contents/MacOS/IeumOffice'))
+      appBinaryForResources(join('/Volumes/Work/NaraeOffice.app/Contents/Resources'), 'darwin'),
+    ).toBe(join('/Volumes/Work/NaraeOffice.app/Contents/MacOS/NaraeOffice'))
   })
 
   it('finds the app in a custom Linux prefix', () => {

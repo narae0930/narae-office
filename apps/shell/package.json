@@ -1,13 +1,13 @@
 {
   "name": "@genoffice/shell",
-  "productName": "IeumOffice",
+  "productName": "NaraeOffice",
   "version": "0.12.5",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/pblsketch/openoffice",
+  "homepage": "https://github.com/narae0930/narae-office",
   "private": true,
-  "description": "Unified IeumOffice shell: one app hosting the docs and sheets modules behind a home/launcher window",
+  "description": "Unified NaraeOffice shell: one app hosting the docs and sheets modules behind a home/launcher window",
   "main": "out/main/index.js",
-  "desktopName": "ieumoffice.desktop",
+  "desktopName": "naraeoffice.desktop",
   "scripts": {
     "dev": "electron-vite dev --watch",
     "build": "electron-vite build",
@@ -52,5 +52,5 @@
     "vite": "^7.3.1",
     "vitest": "^4.1.11"
   },
-  "author": "pblsketch <pblsketch@users.noreply.github.com>"
+  "author": "narae0930 <narae0930@users.noreply.github.com>"
 }

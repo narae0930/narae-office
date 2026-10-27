@@ -1,6 +1,6 @@
 # @genoffice/cli
 
-`ieumoffice` is the IeumOffice command line. It exposes the suite's document engines
+`ieumoffice` is the NaraeOffice command line. It exposes the suite's document engines
 to scripts and AI agents without opening a window: the packaged app runs the
 bundled CLI on its own Node runtime (`ELECTRON_RUN_AS_NODE`), so nothing extra
 has to be installed.
@@ -144,7 +144,7 @@ apply as for every other write.
 `ieumoffice mcp` serves the same commands as Model Context Protocol tools on
 stdio, for clients that cannot run a shell or should not (Claude Desktop,
 Cursor, sandboxed agents). Nothing else is needed on the machine: the process
-runs on the app's Node runtime like every other command, and IeumOffice itself
+runs on the app's Node runtime like every other command, and NaraeOffice itself
 only starts, hidden, for the conversions that need its renderer.
 
 ```bash
@@ -158,7 +158,7 @@ claude mcp add --transport stdio ieumoffice -- ieumoffice mcp
 `ieumoffice mcp install <agent|all> [--dir <path>] [--force]` writes that entry
 for you, pointing at the absolute launcher path so it works without `ieumoffice`
 on the PATH (on Windows, where MCP clients spawn without a shell, the entry
-runs `IeumOffice.exe` as Node on the bundled `genoffice.cjs` with
+runs `NaraeOffice.exe` as Node on the bundled `genoffice.cjs` with
 `ELECTRON_RUN_AS_NODE=1`, the same entry the app's Settings snippet shows): `~/.claude.json` (Claude Code, user scope; `CLAUDE_CONFIG_DIR`
 honoured), `~/.codex/config.toml` (`[mcp_servers.ieumoffice]`; `CODEX_HOME`),
 `~/.cursor/mcp.json`, `~/.gemini/settings.json`, `~/.copilot/mcp-config.json`
@@ -215,7 +215,7 @@ token.
 
 ## Putting ieumoffice on the PATH
 
-- **macOS**: the app tries to symlink `/usr/local/bin/ieumoffice` (or `/opt/homebrew/bin/ieumoffice`) on every launch until one succeeds. If neither directory is writable it stays silent; run `ieumoffice install-cli` from the launcher, or `sudo mkdir -p /usr/local/bin && sudo ln -sf "/Applications/IeumOffice.app/Contents/Resources/cli/ieumoffice" /usr/local/bin/ieumoffice`.
+- **macOS**: the app tries to symlink `/usr/local/bin/ieumoffice` (or `/opt/homebrew/bin/ieumoffice`) on every launch until one succeeds. If neither directory is writable it stays silent; run `ieumoffice install-cli` from the launcher, or `sudo mkdir -p /usr/local/bin && sudo ln -sf "/Applications/NaraeOffice.app/Contents/Resources/cli/ieumoffice" /usr/local/bin/ieumoffice`.
 - **Windows**: the installer appends `<install dir>\resources\cli` to the user PATH (`apps/shell/build/installer.nsh`, REG_EXPAND_SZ preserved, removed on uninstall) and the app re-checks once per version; new terminals see `ieumoffice`. The directory holds `ieumoffice.cmd` for cmd / PowerShell and the extension-less `ieumoffice` for Git Bash.
 - **Linux**: the deb/rpm post-install links `/usr/bin/ieumoffice`; the AppImage relies on the first-launch symlink into `/usr/local/bin` when it is writable.
 
@@ -247,7 +247,7 @@ Independently of the PATH, every launch of the packaged app writes the launcher 
   unrestricted.
 - `apply --out` onto another existing file needs `--force`, like `create` / `convert`;
   editing in place never does. Unknown options are rejected instead of ignored.
-- A file the running IeumOffice shell has open in a tab is not rewritten in place
+- A file the running NaraeOffice shell has open in a tab is not rewritten in place
   (exit 2, `detail.gui_pid`): the shell publishes its open tabs to
   `userData/open-documents.json` and ieumoffice reads it (`GENOFFICE_USER_DATA`
   overrides the location). `--force` writes anyway; the editor then warns about
@@ -260,7 +260,7 @@ Independently of the PATH, every launch of the packaged app writes the launcher 
 ## Cloud commands
 
 `search`, `image` and `media` reuse the editors' provider routing with the
-app's own AI settings (`IeumOffice/ai-settings.json` in the platform config
+app's own AI settings (`NaraeOffice/ai-settings.json` in the platform config
 directory, override with `GENOFFICE_AI_SETTINGS`). The command line only reads
 those settings; it has no login of its own and stores no credentials.
 `read-url` reads only the GitHub token from the same file. `HTTPS_PROXY` /
@@ -309,7 +309,7 @@ AI provider). `detail` carries `url` (the final address after redirects),
 continues, `nextOffset` — pass it as `--offset` to read on. A page is cut at
 50,000 characters per call. GitHub blob addresses are read as raw text; a
 private file uses the read-only GitHub token set under Settings → AI in
-IeumOffice. The command uses no provider, subscription or automatic-call
+NaraeOffice. The command uses no provider, subscription or automatic-call
 ledger.
 
 A page that is not text (a PDF, image or Office file) is refused: download and
@@ -432,7 +432,7 @@ packages/cli/bin/ieumoffice info file.docx  # falls back to the system node
 ```
 
 Conversions that need an app renderer (Word/PowerPoint/Excel/HTML/Markdown → PDF,
-Word → HTML, HTML → Word, `create --type pdf`) run inside the IeumOffice binary
+Word → HTML, HTML → Word, `create --type pdf`) run inside the NaraeOffice binary
 through its hidden `--headless-export` mode: ieumoffice spawns it (Dock hidden, no
 window), reads the JSON envelope it prints and maps its exit code. Set
 `GENOFFICE_APP_BIN` to point at a specific executable; in a checkout the dev Electron

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  IeumOffice logo lockup (source of truth for the in-app sidebar logo).
+  NaraeOffice logo lockup (source of truth for the in-app sidebar logo).
 
   Pure black and white on purpose: the shell flips it for dark themes with a
   CSS invert filter, so it must not carry any colour.
 
   The mark repeats apps/shell/build/brand/app-icon.svg in a single colour; the
   over/under gaps alone separate the ring from the rounded square. The wordmark
-  is "IeumOffice" set in Roboto Bold 2.137 (Apache License 2.0) and converted
+  is "NaraeOffice" set in Roboto Bold 2.137 (Apache License 2.0) and converted
   to outlines so it renders without the font installed; the capital I is
   redrawn with slab bars so it cannot be read as a lowercase L. See NOTICE.
 
